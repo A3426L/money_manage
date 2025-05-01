@@ -9,15 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        GeometryReader { geometry in
+            let center = CGPoint(x: geometry.size.width/2, y: geometry.size.height + 100)
+            Animation()
+            ZStack{
+                GridBackground(spacing: 20)
+                VStack{
+                    ZStack{
+                        CircleSlider(radius: geometry.size.width + 200 )
+                                .position(center)
+                        CircleSlider(radius: geometry.size.width)
+                                .position(center)
+                    }
+                }
+            }
         }
-        .padding()
     }
 }
+
+
 
 #Preview {
     ContentView()

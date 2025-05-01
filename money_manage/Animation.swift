@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import RiveRuntime
 
-struct Animetion: View {
+struct Animation: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        RiveViewModel(fileName: "flora").view()
     }
 }
 
 #Preview {
-    Animetion()
+    Animation()
 }
