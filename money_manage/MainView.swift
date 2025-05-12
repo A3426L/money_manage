@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         VStack{
-            Animation()
+            Animation(aligment: .topCenter)
             HStack{
                 Button(action: {
                     print("tap buton")
