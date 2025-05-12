@@ -9,24 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        GeometryReader { geometry in
-            let center = CGPoint(x: geometry.size.width/2, y: geometry.size.height + 100)
-            Animation()
-            ZStack{
-                GridBackground(spacing: 20)
-                VStack{
-                    ZStack{
-                        CircleSlider(radius: geometry.size.width + 200 )
-                                .position(center)
-                        CircleSlider(radius: geometry.size.width)
-                                .position(center)
-                    }
+        Text("Hello, World!")
+        TabView{
+            AnalysisView()
+                .tabItem{
+                    Image(systemName: "1.circle.fill")
                 }
-            }
+            MainView()
+                .tabItem{
+                    Image(systemName: "2.circle.fill")
+                }
+            ResisterView()
+                .tabItem{
+                    Image(systemName: "3.circle.fill")
+                }
         }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
-
 
 
 #Preview {
