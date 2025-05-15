@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var text:String = "Hello!"
+    @State private var templates: ChatTemplates? = nil
     @State var currentIndex: Int = 0
     @State var textlines: [String] = ["一週間の予測を伝えるよ！","今週はあんま良くないよ","もっと頑張ろう"]
     var body: some View {
@@ -17,33 +18,48 @@ struct MainView: View {
                 .frame(height: 300)
                 .border(Color.blue)
             Text(textlines[currentIndex])
-                .font(.largeTitle)
+                .font(.body)
                 .frame(height: 100, alignment: .leading)
                 .frame(maxWidth: .infinity)
                 .border(Color.black)
                 .background(Color.yellow.opacity(0.2))
                 .cornerRadius(12)
                 .padding()
+            
             Spacer()
             
             Grid(alignment: .bottom,horizontalSpacing: 50, verticalSpacing: 10){
                 GridRow{
                     CustomButton(label: "一週間の予測",action: {
-                        currentIndex = 0
-                        textlines = ["一週間の予測を伝えるよ！","今週はあんま良くないよ","もっと頑張ってね"]
+                        if let lines = templates?.weekly_spending_forecast.randomElement() {
+                            currentIndex = 0
+                            textlines = lines
+                        }
                     })
                     
                     CustomButton(label: "明日の予測",action: {
-                        currentIndex = 0
-                        textlines = ["明日の予測を教えるよ！","明日は5,000円使うらしいで","程々にね"]
+                        if let lines = templates?.tomorrow_forecast.randomElement() {
+                            currentIndex = 0
+                            textlines = lines
+                        }
                     })
                 }
                 
                 GridRow{
                     CustomButton(label: "お話ししよ〜",action: {
-                        currentIndex = 0
-                        textlines = ["お話し？","舐めてんのか？","暇人が!働け！"]
+                        if let lines = templates?.chitchat.randomElement() {
+                            currentIndex = 0
+                            textlines = lines
+                        }
                     })
+                    
+                    CustomButton(label: "アドバイス",action: {
+                        if let lines = templates?.advice.randomElement() {
+                            currentIndex = 0
+                            textlines = lines
+                        }
+                    })
+
                 }
             }
             .frame(maxWidth: .infinity)
@@ -56,7 +72,11 @@ struct MainView: View {
                 currentIndex += 1
             }
         }
+        .onAppear {
+            templates = loadChatTemplates()
+        }
     }
+
 }
 
 #Preview {
