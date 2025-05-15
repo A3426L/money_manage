@@ -9,8 +9,13 @@ import SwiftUI
 import RiveRuntime
 
 struct Animation: View {
+    var aligment: RiveAlignment = .center
+    var fit:RiveFit = .contain
+    
     var body: some View {
-        RiveViewModel(fileName: "flora").view()
+        VStack{
+            RiveViewModel(fileName: "flora",fit: fit, alignment: aligment).view()
+        }
     }
 }
 
