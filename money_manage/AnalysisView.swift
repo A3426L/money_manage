@@ -27,6 +27,11 @@ struct AnalysisPastView: View {
     var body: some View {
         VStack{
             CustomCalender()
+                .padding()
+            ScrollView{
+                CustomCharts()
+                LineMarkGraphView()
+            }
         }
     }
 }
