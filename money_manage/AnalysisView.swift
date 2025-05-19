@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct AnalysisView: View {
     var body: some View {
         TabView{
@@ -25,7 +26,7 @@ struct AnalysisView: View {
 struct AnalysisPastView: View {
     var body: some View {
         VStack{
-            BasicMultiDatePicker()
+            CustomCalender()
         }
     }
 }

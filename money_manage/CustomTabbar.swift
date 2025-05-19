@@ -74,7 +74,12 @@ struct CustomTabbar: View {
             }
         }
     }
-    
+}
+
+struct CustomTabItem: View{
+    var body: some View{
+        Text("Custom")
+    }
 }
 
 #Preview {

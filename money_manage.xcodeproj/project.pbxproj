@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72214B612DDB59D800EC21CB /* SwiftUICalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 72214B602DDB59D800EC21CB /* SwiftUICalendar */; };
 		7264E1652DC302F1007E08B6 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 7264E1642DC302F1007E08B6 /* RiveRuntime */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72214B612DDB59D800EC21CB /* SwiftUICalendar in Frameworks */,
 				7264E1652DC302F1007E08B6 /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +73,7 @@
 			name = money_manage;
 			packageProductDependencies = (
 				7264E1642DC302F1007E08B6 /* RiveRuntime */,
+				72214B602DDB59D800EC21CB /* SwiftUICalendar */,
 			);
 			productName = money_manage;
 			productReference = 7264E1292DBB8687007E08B6 /* money_manage.app */;
@@ -102,6 +105,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				7264E1632DC302F1007E08B6 /* XCRemoteSwiftPackageReference "rive-ios" */,
+				72214B5F2DDB59D800EC21CB /* XCRemoteSwiftPackageReference "SwiftUICalendar" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7264E12A2DBB8687007E08B6 /* Products */;
@@ -335,6 +339,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		72214B5F2DDB59D800EC21CB /* XCRemoteSwiftPackageReference "SwiftUICalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GGJJack/SwiftUICalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.14;
+			};
+		};
 		7264E1632DC302F1007E08B6 /* XCRemoteSwiftPackageReference "rive-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rive-app/rive-ios";
@@ -346,6 +358,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		72214B602DDB59D800EC21CB /* SwiftUICalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72214B5F2DDB59D800EC21CB /* XCRemoteSwiftPackageReference "SwiftUICalendar" */;
+			productName = SwiftUICalendar;
+		};
 		7264E1642DC302F1007E08B6 /* RiveRuntime */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7264E1632DC302F1007E08B6 /* XCRemoteSwiftPackageReference "rive-ios" */;
