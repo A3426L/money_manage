@@ -15,6 +15,7 @@ struct ContentView: View {
             AnalysisView()
                 .tabItem{
                     Image(systemName: "1.circle.fill")
+                        .font(.body)
                 }
             MainView()
                 .tabItem{
@@ -25,7 +26,10 @@ struct ContentView: View {
                     Image(systemName: "3.circle.fill")
                 }
         }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+        .accentColor(.blue)
+        
 
     }
 }
