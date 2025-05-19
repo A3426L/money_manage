@@ -13,33 +13,13 @@ struct CustomCalender: View {
 
     init() {
         var date = YearMonthDay.current
+        print(date)
         informations[date] = []
-        informations[date]?.append(("Hello", Color.orange))
-        informations[date]?.append(("World", Color.blue))
+        informations[date]?.append(("540", Color.red))
 
         date = date.addDay(value: 3)
         informations[date] = []
-        informations[date]?.append(("Test", Color.pink))
-
-        date = date.addDay(value: 8)
-        informations[date] = []
-        informations[date]?.append(("Jack", Color.green))
-
-        date = date.addDay(value: 5)
-        informations[date] = []
-        informations[date]?.append(("Home", Color.red))
-
-        date = date.addDay(value: -23)
-        informations[date] = []
-        informations[date]?.append(("Meet at 8, Home", Color.purple))
-
-        date = date.addDay(value: -5)
-        informations[date] = []
-        informations[date]?.append(("Home", Color.yellow))
-
-        date = date.addDay(value: -10)
-        informations[date] = []
-        informations[date]?.append(("Baseball", Color.green))
+        informations[date]?.append(("400", Color.blue))
     }
 
     var body: some View {
@@ -87,8 +67,9 @@ struct CustomCalender: View {
                     }
                 })
             }
+            .frame(height: reader.size.height * 0.45)
+            .padding()
         }
-        .navigationBarTitle("Information")
     }
 
     private func getColor(_ date: YearMonthDay) -> Color {
