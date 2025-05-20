@@ -7,12 +7,29 @@
 
 import SwiftUI
 
-struct CustomTopTab: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+enum TopTab{
+    case past
+    case future
 }
 
-#Preview {
-    CustomTopTab()
+struct CustomTopTab: View {
+    @Binding var selectedTopTab: TopTab
+    var body: some View {
+        HStack{
+            Button{
+                print("past")
+                selectedTopTab = .past
+            }label: {
+                Text("Past")
+            }
+            Button{
+                print("future")
+                selectedTopTab = .future
+            }label: {
+                Text("future")
+                    
+            }
+        }
+    }
+    
 }

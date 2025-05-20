@@ -21,36 +21,30 @@ struct CustomTabbar: View {
                 HStack{
                     Spacer()
                     Button {
-                        print("1")
                         selectedTab = .analysis
                     } label: {
-                        Text("1")
+                        Image(systemName: "calendar.and.person")
+                            .font(.title)
+                            .foregroundStyle(.black)
                     }
-                    .frame(width: 80,height: 60)
-                    .background(.black)
                     Spacer()
                     
                     Button {
-                        print("2")
                         selectedTab = .home
-                        print(selectedTab)
                     } label: {
-                        Text("2")
-                            .frame(width: 80,height: 60)
-                            .foregroundColor(.white)
+                        Image(systemName: "house")
+                            .font(.title)
+                            .foregroundStyle(.black)
                     }
-                    .frame(width: 80,height: 60)
-                    .background(.black)
                     
                     Spacer()
                     Button {
-                        print("3")
                         selectedTab = .resister
                     } label: {
-                        Text("3")
+                        Image(systemName: "fleuron")
+                            .font(.title)
+                            .foregroundStyle(.black)
                     }
-                    .frame(width: 80,height: 60)
-                    .background(.black)
                     Spacer()
                 }
                 .padding(8)
