@@ -9,26 +9,33 @@ import SwiftUI
 
 
 struct ContentView: View {
+    @State private var selectedTab: Tab = .home
     var body: some View {
         Text("Hello, World!")
-        TabView{
+        TabView(selection: $selectedTab){
             AnalysisView()
                 .tabItem{
                     Image(systemName: "1.circle.fill")
                         .font(.body)
                 }
+                .tag(Tab.analysis)
             MainView()
                 .tabItem{
                     Image(systemName: "2.circle.fill")
                 }
+                .tag(Tab.home)
             ResisterView()
                 .tabItem{
                     Image(systemName: "3.circle.fill")
                 }
+                .tag(Tab.resister)
         }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         .accentColor(.blue)
+        
+        CustomTabbar(selectedTab: $selectedTab)
+        
         
 
     }
