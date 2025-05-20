@@ -7,40 +7,22 @@
 
 import SwiftUI
 
-struct CustomTabbar: View {
-    @State private var selectedTab: Int = 0
+
+enum Tab {
+    case home
+    case analysis
+    case resister
+}
     
+struct CustomTabbar: View {
+    @Binding var selectedTab: Tab
     var body: some View {
-        Text("test")
-        ZStack(alignment: .bottom){
-            TabView(selection: $selectedTab) {
-                AnalysisView()
-                    .tabItem{
-                        Image(systemName: "1.circle.fill")
-                            .font(.body)
-                    }
-                    .tag(1)
-                MainView()
-                    .tabItem{
-                        Image(systemName: "2.circle.fill")
-                    }
-                    .tag(2)
-                ResisterView()
-                    .tabItem{
-                        Image(systemName: "3.circle.fill")
-                    }
-                    .tag(3)
-                
-            }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-            
             ZStack{
                 HStack{
                     Spacer()
                     Button {
                         print("1")
-                        selectedTab = 1
+                        selectedTab = .analysis
                     } label: {
                         Text("1")
                     }
@@ -50,7 +32,8 @@ struct CustomTabbar: View {
                     
                     Button {
                         print("2")
-                        selectedTab = 2
+                        selectedTab = .home
+                        print(selectedTab)
                     } label: {
                         Text("2")
                             .frame(width: 80,height: 60)
@@ -62,7 +45,7 @@ struct CustomTabbar: View {
                     Spacer()
                     Button {
                         print("3")
-                        selectedTab = 3
+                        selectedTab = .resister
                     } label: {
                         Text("3")
                     }
@@ -74,7 +57,6 @@ struct CustomTabbar: View {
             }
         }
     }
-}
 
 struct CustomTabItem: View{
     var body: some View{
@@ -83,5 +65,6 @@ struct CustomTabItem: View{
 }
 
 #Preview {
-    CustomTabbar()
+    @State var selectedTab: Tab = .home
+    return CustomTabbar(selectedTab: $selectedTab)
 }

@@ -67,8 +67,8 @@ struct CustomCalender: View {
                     }
                 })
             }
-            .frame(height: reader.size.height * 0.45)
-            .padding()
+//            .frame(height: reader.size.height * 0.45)
+//            .padding()
         }
     }
 
