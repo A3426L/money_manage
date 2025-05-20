@@ -60,8 +60,8 @@ struct CircleSlider: View {
                 let index = Int(round((1 - normalizedAngle) * 4))
                 let currentLabel = display_array[min(max(index, 0), display_array.count - 1)]
 
-//                Text("選択中: ¥\(Int(currentLabel))")
-//                    .font(.title)
+                Text("選択中: ¥\(Int(currentLabel))")
+                    .font(.title)
             }
 }
 

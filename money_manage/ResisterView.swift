@@ -9,7 +9,21 @@ import SwiftUI
 
 struct ResisterView: View {
     var body: some View {
-        Text("ResisterView")
+        GeometryReader { geometry in
+            let center = CGPoint(x: geometry.size.width/2, y: geometry.size.height + 100)
+            Animation(aligment: .topCenter)
+            ZStack{
+                GridBackground(spacing: 20)
+                VStack{
+                    ZStack{
+                        CircleSlider(radius: geometry.size.width + 100 )
+                                .position(center)
+                        CircleSlider(radius: geometry.size.width)
+                                .position(center)
+                    }
+                }
+            }
+        }
     }
 }
 
