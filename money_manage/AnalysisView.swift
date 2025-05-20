@@ -9,17 +9,23 @@ import SwiftUI
 
 
 struct AnalysisView: View {
+    @State var TopTabSelected:TopTab = .past
     var body: some View {
-        TabView{
-            AnalysisPastView().tabItem{
-                Label("Past", systemImage: "arrow.triangle.2.circlepath")
+        VStack{
+            CustomTopTab(selectedTopTab: $TopTabSelected)
+            TabView(selection: $TopTabSelected){
+                AnalysisPastView()
+                    .tag(TopTab.past)
+                
+                AnalysisFutureView()
+                    .tag(TopTab.future)
             }
+            .disabled(true)
+            .tabViewStyle(.page(indexDisplayMode: .never))
             
-            AnalysisFutureView().tabItem{
-                Label("Future", systemImage: "arrow.triangle.2.circlepath")
-            }
+            
         }
-        .tabViewStyle(.page(indexDisplayMode: .never))
+
     }
 }
 
