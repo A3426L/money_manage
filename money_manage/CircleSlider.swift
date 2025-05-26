@@ -16,7 +16,6 @@ struct CircleSlider: View {
     var radius:CGFloat
     let minValue: Double = 100
     let maxValue: Double = 10000
-//    var display_array = ["1000","2000","3000","4000","5000"]
 
     var body: some View {
         ZStack {
@@ -25,7 +24,7 @@ struct CircleSlider: View {
                     .foregroundColor(Color.red.opacity(0.25))
                     .frame(width: radius, height: radius)
                 
-                ForEach(0..<5) { i in
+                ForEach(0..<display_array.count, id: \.self){ i in
                     let angle = Double(i) * .pi / 4.0
                     let tickX = (radius / 2) - (radius / 2) * cos(angle)
                     let tickY = (radius / 2) - (radius / 2) * sin(angle)

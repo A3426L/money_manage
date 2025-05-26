@@ -8,31 +8,39 @@
 import SwiftUI
 
 struct ResisterView: View {
-    @State var CurrentValue: String = ""
-    @State var display_array = ["5000","2000","3000","4000","5000"]
+    @State var currentValue: Double = 5000
+    @State var currentValue2: Double = 500
+    @State var display_array = ["1000","2000","3000","4000","5000","6000","7000","8000","9000","10000"]
     var body: some View {
-        GeometryReader { geometry in
-            let center = CGPoint(x: geometry.size.width/2, y: geometry.size.height + 80)
+        
+//        GeometryReader { geometry in
+//            let center = CGPoint(x: geometry.size.width/2, y: geometry.size.height + 80)
+//            Animation(aligment: .topCenter)
+//        }
+        VStack{
             Animation(aligment: .topCenter)
+            
             ZStack{
-                GridBackground(spacing: 20)
-                VStack{
-                    ZStack{
-                        CircleSlider(CurrentValue: $CurrentValue, display_array: $display_array, radius: geometry.size.width + 120)
-                                .position(center)
-                                .onTapGesture {
-                                    print($CurrentValue.wrappedValue)
-                                }
-                        
-//                        CircleSlider(radius: geometry.size.width )
-//                                .position(center)
-//                        
-//                        CircleSlider(radius: geometry.size.width - 120 )
-//                                .position(center)
-
-                    }
-                }
+                CircularPicker(value: $currentValue,
+                               minValue: 0.0,
+                               maxValue: 10000,
+                               tickCount: 11,
+                               minorTicksPerMajor: 0,
+                               stepValue: 1000)
+                .frame(width: 400, height: 500)
+                CircularPicker(value: $currentValue2,
+                               minValue: 0.0,
+                               maxValue: 1000,
+                               tickCount: 11,
+                               minorTicksPerMajor: 0,
+                               stepValue: 100)
+                .frame(width: 200, height: 200)
+                
+                Text(String(Int(currentValue + currentValue2)))
+   
             }
+            .frame(width: 400,height: 50)
+
         }
     }
 }
