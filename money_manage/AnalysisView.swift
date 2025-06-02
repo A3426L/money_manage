@@ -20,7 +20,6 @@ struct AnalysisView: View {
                 AnalysisFutureView()
                     .tag(TopTab.future)
             }
-            .disabled(true)
             .tabViewStyle(.page(indexDisplayMode: .never))
             
             
