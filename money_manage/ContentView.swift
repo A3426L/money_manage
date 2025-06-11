@@ -24,7 +24,7 @@ struct ContentView: View {
                     Image(systemName: "2.circle.fill")
                 }
                 .tag(Tab.home)
-            ResisterView()
+            ResisterView2()
                 .tabItem{
                     Image(systemName: "3.circle.fill")
                 }
