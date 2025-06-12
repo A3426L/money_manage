@@ -11,6 +11,19 @@
 		7264E1652DC302F1007E08B6 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 7264E1642DC302F1007E08B6 /* RiveRuntime */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		721FCA2A2DFAB38A00AF69CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7264E1292DBB8687007E08B6 /* money_manage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = money_manage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -62,6 +75,7 @@
 				7264E1252DBB8686007E08B6 /* Sources */,
 				7264E1262DBB8686007E08B6 /* Frameworks */,
 				7264E1272DBB8687007E08B6 /* Resources */,
+				721FCA2A2DFAB38A00AF69CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

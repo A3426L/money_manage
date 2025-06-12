@@ -33,13 +33,15 @@ struct ResisterView2: View {
 
 struct AddExpenseView: View {
     @Environment(\.dismiss) private var dismiss
-    
+    @Environment(\.modelContext) private var modelContext
     @State private var selectedCategory = "Food"
     @State private var amount = ""
     @State private var date = Date()
     @State private var memo = ""
     
     let categories = ["Food", "Transport", "Hobbies", "Shopping", "Other"]
+    
+    let category = Category(name: "Food")
     
     var body: some View {
         VStack(spacing: 20) {
@@ -111,7 +113,22 @@ struct AddExpenseView: View {
                         .padding(.horizontal)
                 }
                 Button("決定"){
-                    print("決定")
+                    let newTransaction = Transaction(
+                        date: Date(),
+                        amount: 1000,
+                        memo: "ランチ",
+                        type: false,
+                        category: category
+                        )
+                    modelContext.insert(newTransaction)
+                    
+                    do {
+                        try modelContext.save()
+                        dismiss()
+                        print("保存に成功！")
+                    } catch {
+                        print("error!")
+                    }
                 }
                 .frame(minWidth: 30, maxWidth: .infinity)
                 .padding()
