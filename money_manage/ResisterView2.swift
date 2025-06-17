@@ -35,7 +35,7 @@ struct AddExpenseView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @State private var selectedCategory = "Food"
-    @State private var amount = ""
+    @State private var amount:Int = 0
     @State private var date = Date()
     @State private var memo = ""
     
@@ -76,7 +76,7 @@ struct AddExpenseView: View {
                 Text("Money")
                     .fontWeight(.bold)
                 
-                TextField("¥0", text: $amount)
+                TextField("¥0", value: $amount, format: .number)
                     .keyboardType(.numberPad)
                     .padding()
                     .background(Color.black.opacity(0.05))
@@ -115,8 +115,8 @@ struct AddExpenseView: View {
                 Button("決定"){
                     let newTransaction = Transaction(
                         date: Date(),
-                        amount: 1000,
-                        memo: "ランチ",
+                        amount: amount,
+                        memo: memo,
                         type: false,
                         category: category
                         )

@@ -58,7 +58,7 @@ class Category {
     var createdAt: Date
     var updatedAt: Date
 
-    @Relationship(inverse: \Transaction.category) var transactions: [Transaction]?
+    @Relationship(deleteRule: .cascade) var transactions: [Transaction]?
 
     init(
         id: UUID = UUID(),
