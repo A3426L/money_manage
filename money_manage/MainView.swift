@@ -15,15 +15,14 @@ struct MainView: View {
     var body: some View {
         VStack{
             Animation(aligment: .topCenter, fit:.contain)
-                .frame(height: 300)
-                .border(Color.blue)
+                .frame(maxWidth: .infinity ,maxHeight: 250)
             Text(textlines[currentIndex])
                 .font(.body)
                 .frame(height: 100, alignment: .leading)
                 .frame(maxWidth: .infinity)
-                .border(Color.black)
-                .background(Color.yellow.opacity(0.2))
-                .cornerRadius(12)
+                .border(Color.black, width: 5)
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(8)
                 .padding()
             
             Spacer()
@@ -63,7 +62,6 @@ struct MainView: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            .border(Color.green)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .contentShape(Rectangle())

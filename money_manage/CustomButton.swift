@@ -16,9 +16,10 @@ struct CustomButton: View {
         Text(label)
             .padding()
             .accentColor(Color.white)
-            .background(Color.blue)
+            .background(Color.black)
             .cornerRadius(.infinity)
-            .shadow(color: Color.black, radius: 0, x: 0, y: 6)
+            .foregroundColor(Color.white)
+//            .shadow(color: Color.black, radius: 0, x: 0, y: 6)
             .gesture(
                 DragGesture(minimumDistance: 0)
                     .updating($isPressed){_,_,_ in

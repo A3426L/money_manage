@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 import SwiftUICalendar
 
 struct CustomCalender: View {
     var informations = [YearMonthDay: [(String, Color)]]()
+    @Query(sort: \Transaction.date)  var transactions: [Transaction]
 
     init() {
         var date = YearMonthDay.current
-        print(date)
+//        print(date)
         informations[date] = []
         informations[date]?.append(("540", Color.red))
 
@@ -67,8 +69,13 @@ struct CustomCalender: View {
                     }
                 })
             }
-//            .frame(height: reader.size.height * 0.45)
-//            .padding()
+            .onAppear {
+                for tx in transactions {
+                    print("Date: \(tx.date), Amount: \(tx.amount), Memo: \(tx.memo)")
+                }
+            }
+
+
         }
     }
 
