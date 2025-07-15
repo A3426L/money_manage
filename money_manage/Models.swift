@@ -14,6 +14,7 @@ struct ChatTemplates: Decodable {
     let tomorrow_forecast: [[String]]
     let chitchat: [[String]]
     let advice: [[String]]
+    let talk: [[String]]
 }
 
 //swiftData

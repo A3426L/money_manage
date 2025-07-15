@@ -38,14 +38,14 @@ struct CustomTabbar: View {
                     }
                     
                     Spacer()
-                    Button {
-                        selectedTab = .resister
-                    } label: {
-                        Image(systemName: "fleuron")
-                            .font(.title)
-                            .foregroundStyle(.black)
-                    }
-                    Spacer()
+//                    Button {
+//                        selectedTab = .resister
+//                    } label: {
+//                        Image(systemName: "fleuron")
+//                            .font(.title)
+//                            .foregroundStyle(.black)
+//                    }
+//                    Spacer()
                 }
                 .padding(8)
             }

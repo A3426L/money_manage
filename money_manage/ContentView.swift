@@ -11,7 +11,6 @@ import SwiftUI
 struct ContentView: View {
     @State private var selectedTab: Tab = .home
     var body: some View {
-        Text("Hello, World!")
         TabView(selection: $selectedTab){
             AnalysisView()
                 .tabItem{
@@ -24,11 +23,11 @@ struct ContentView: View {
                     Image(systemName: "2.circle.fill")
                 }
                 .tag(Tab.home)
-            ResisterView2()
-                .tabItem{
-                    Image(systemName: "3.circle.fill")
-                }
-                .tag(Tab.resister)
+//            ResisterView2()
+//                .tabItem{
+//                    Image(systemName: "3.circle.fill")
+//                }
+//                .tag(Tab.resister)
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
